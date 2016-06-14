@@ -2,15 +2,16 @@
 
 $(document).ready(function() {
   $("#survey form").submit(function(event) {
-    var favoriteNumber = $("input#favoriteNumber").val();
-    var favoriteBand = $("input#favoriteBand").val();
-    var favoriteColor = $("input#favoriteColor").val();
-
-    var array = [favoriteNumber,favoriteBand,favoriteColor];
 
 
+    var blanks = ["favoriteNumber","favoriteBand","favoriteColor"];
 
-    alert(array)
+    blanks.forEach(function(blank) {
+      var userInput = $("input#" + blank).val();
+      $("." + blank).text(userInput);
+    });
+
+$("#results").show();
 
 
 
